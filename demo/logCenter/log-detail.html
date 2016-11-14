@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="lib/jquery/jquery-2.1.3.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/angular/angular.min.js"></script>
+<title>日志明细</title>
+</head>
+
+<body>
+<div class="list-group">
+  <a href="#" class="list-group-item" data-toggle="modal" data-target="#myModal">
+    <p class="list-group-item-text">
+        <span class="label label-default">Action</span>
+        <span class="label label-primary">Class</span>
+        <span class="label label-success">Method</span>
+        <span class="label label-info">Line</span>
+        <span class="label label-warning">Service</span>
+        <span class="label label-danger">Version</span>
+        <span class="label label-danger">Time</span>
+        <span class="label label-danger">Error</span>
+    </p>
+  </a>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel"Message</h4>
+      </div>
+      <div class="modal-body">
+        {"Msg":"Exit {\"Msg\":\"返回结果\",\"Headers\":{},\"HttpMethod\":\"\",\"RemoteUrl\":\"\",\"Params\":{},\"Returns\":{\"RequestId\":\"26ab31b9-2a97-4ff3-a7c9-7a2b28cb6925\",\"DomainRecordSet\":[{\"KadId\":\"dn2016111003471101\",\"DomainRecordId\":\"dr2016111114495201\",\"DomainRecordName\":\"whoami.cnzz.com\",\"IsHttps\":1.0,\"CertificateId\":\"ct2016111117420501\",\"Cname\":\"89eb09fcb74d149a.qscname.com\",\"CnameStatus\":0.0,\"RequestThreshold\":200.0,\"ConnectionThreshold\":200.0,\"RecordCcStatus\":1.0,\"SourceCount\":1.0,\"CertifName\":\"test\"},{\"KadId\":\"dn2016111003471101\",\"DomainRecordId\":\"dr2016111114092601\",\"DomainRecordName\":\"sayhi.cnzz.com\",\"IsHttps\":0.0,\"CertificateId\":\"\",\"Cname\":\"63a6706f681b3d6d.qscname.com\",\"CnameStatus\":0.0,\"RequestThreshold\":120.0,\"ConnectionThreshold\":120.0,\"RecordCcStatus\":0.0,\"SourceCount\":1.0}]}}: {RequestId=26ab31b9-2a97-4ff3-a7c9-7a2b28cb6925, DomainRecordSet=[{KadId=dn2016111003471101, DomainRecordId=dr2016111114495201, DomainRecordName=whoami.cnzz.com, IsHttps=1.0, CertificateId=ct2016111117420501, Cname=89eb09fcb74d149a.qscname.com, CnameStatus=0.0, RequestThreshold=200.0, ConnectionThreshold=200.0, RecordCcStatus=1.0, SourceCount=1.0, CertifName=test}, {KadId=dn2016111003471101, DomainRecordId=dr2016111114092601, DomainRecordName=sayhi.cnzz.com, IsHttps=0.0, CertificateId=, Cname=63a6706f681b3d6d.qscname.com, CnameStatus=0.0, RequestThreshold=120.0, ConnectionThreshold=120.0, RecordCcStatus=0.0, SourceCount=1.0}]}"}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
