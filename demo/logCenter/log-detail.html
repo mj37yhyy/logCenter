@@ -17,19 +17,21 @@
 </head>
 
 <body>
-<div class="list-group">
-  <a href="#" class="list-group-item" data-toggle="modal" data-target="#myModal">
-    <p class="list-group-item-text">
-        <span class="label label-default">Action</span>
-        <span class="label label-primary">Class</span>
-        <span class="label label-success">Method</span>
-        <span class="label label-info">Line</span>
-        <span class="label label-warning">Service</span>
-        <span class="label label-danger">Version</span>
-        <span class="label label-danger">Time</span>
-        <span class="label label-danger">Error</span>
-    </p>
-  </a>
+<div ng-app="" ng-init="names=[1,2,3,4,5,6,7]">
+    <div class="list-group">
+      <a href="#" class="list-group-item" data-toggle="modal" data-target="#myModal" ng-repeat="x in names">
+        <p class="list-group-item-text">
+            <span class="label label-default">Action</span>
+            <span class="label label-primary">Class</span>
+            <span class="label label-success">Method</span>
+            <span class="label label-info">Line</span>
+            <span class="label label-warning">Service</span>
+            <span class="label label-danger">Version</span>
+            <span class="label label-danger">Time</span>
+            <span class="label label-danger">Error</span>
+        </p>
+      </a>
+    </div>
 </div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -39,7 +41,49 @@
         <h4 class="modal-title" id="myModalLabel"Message</h4>
       </div>
       <div class="modal-body">
-        {"Msg":"Exit {\"Msg\":\"返回结果\",\"Headers\":{},\"HttpMethod\":\"\",\"RemoteUrl\":\"\",\"Params\":{},\"Returns\":{\"RequestId\":\"26ab31b9-2a97-4ff3-a7c9-7a2b28cb6925\",\"DomainRecordSet\":[{\"KadId\":\"dn2016111003471101\",\"DomainRecordId\":\"dr2016111114495201\",\"DomainRecordName\":\"whoami.cnzz.com\",\"IsHttps\":1.0,\"CertificateId\":\"ct2016111117420501\",\"Cname\":\"89eb09fcb74d149a.qscname.com\",\"CnameStatus\":0.0,\"RequestThreshold\":200.0,\"ConnectionThreshold\":200.0,\"RecordCcStatus\":1.0,\"SourceCount\":1.0,\"CertifName\":\"test\"},{\"KadId\":\"dn2016111003471101\",\"DomainRecordId\":\"dr2016111114092601\",\"DomainRecordName\":\"sayhi.cnzz.com\",\"IsHttps\":0.0,\"CertificateId\":\"\",\"Cname\":\"63a6706f681b3d6d.qscname.com\",\"CnameStatus\":0.0,\"RequestThreshold\":120.0,\"ConnectionThreshold\":120.0,\"RecordCcStatus\":0.0,\"SourceCount\":1.0}]}}: {RequestId=26ab31b9-2a97-4ff3-a7c9-7a2b28cb6925, DomainRecordSet=[{KadId=dn2016111003471101, DomainRecordId=dr2016111114495201, DomainRecordName=whoami.cnzz.com, IsHttps=1.0, CertificateId=ct2016111117420501, Cname=89eb09fcb74d149a.qscname.com, CnameStatus=0.0, RequestThreshold=200.0, ConnectionThreshold=200.0, RecordCcStatus=1.0, SourceCount=1.0, CertifName=test}, {KadId=dn2016111003471101, DomainRecordId=dr2016111114092601, DomainRecordName=sayhi.cnzz.com, IsHttps=0.0, CertificateId=, Cname=63a6706f681b3d6d.qscname.com, CnameStatus=0.0, RequestThreshold=120.0, ConnectionThreshold=120.0, RecordCcStatus=0.0, SourceCount=1.0}]}"}
+        <pre class="code">
+{
+    "Msg": {
+        "Msg": "返回结果",
+        "Headers": {},
+        "HttpMethod": "",
+        "RemoteUrl": "",
+        "Params": {},
+        "Returns": {
+            "RequestId": "26ab31b9-2a97-4ff3-a7c9-7a2b28cb6925",
+            "DomainRecordSet": [
+                {
+                    "KadId": "dn2016111003471101",
+                    "DomainRecordId": "dr2016111114495201",
+                    "DomainRecordName": "whoami.cnzz.com",
+                    "IsHttps": 1,
+                    "CertificateId": "ct2016111117420501",
+                    "Cname": "89eb09fcb74d149a.qscname.com",
+                    "CnameStatus": 0,
+                    "RequestThreshold": 200,
+                    "ConnectionThreshold": 200,
+                    "RecordCcStatus": 1,
+                    "SourceCount": 1,
+                    "CertifName": "test"
+                },
+                {
+                    "KadId": "dn2016111003471101",
+                    "DomainRecordId": "dr2016111114092601",
+                    "DomainRecordName": "sayhi.cnzz.com",
+                    "IsHttps": 0,
+                    "CertificateId": "",
+                    "Cname": "63a6706f681b3d6d.qscname.com",
+                    "CnameStatus": 0,
+                    "RequestThreshold": 120,
+                    "ConnectionThreshold": 120,
+                    "RecordCcStatus": 0,
+                    "SourceCount": 1
+                }
+            ]
+        }
+    }
+}
+		</pre>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
