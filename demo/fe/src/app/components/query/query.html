@@ -1,0 +1,41 @@
+<div>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">日志查询</h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="userName" placeholder="用户名">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">时间：从</label>
+                    <div class="col-sm-10">
+                        <input type="datetime-local" class="form-control" id="timeFrom" placeholder="时间：从">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">时间：到</label>
+                    <div class="col-sm-10">
+                        <input type="datetime-local" class="form-control" id="timeTo" placeholder="时间：到">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn btn-default" ng-click="doQuery()">查询</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="list-group">
+            <a href="javascript:;" class="list-group-item {{ log.error }}" ng-repeat="log in logs"
+               ng-click="doOpen(log.traceId)">
+                <h4 class="list-group-item-heading">{{ log.traceId }}</h4>
+                <p class="list-group-item-text">{{ log.time }}&nbsp;{{ log.text }}</p>
+            </a>
+        </div>
+    </div>
+</div>
