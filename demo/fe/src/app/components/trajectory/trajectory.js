@@ -84,7 +84,7 @@ var list = [
     angular.module('fe').controller('TrajectoryController', TrajectoryController);
 
     /** @ngInject */
-    function TrajectoryController($stateParams, $scope) {
+    function TrajectoryController($stateParams, $scope, $uibModal) {
         var vm = this;
         vm.traceId = $stateParams.traceId;
 
@@ -141,13 +141,14 @@ var list = [
                 .attr('strock-width', '2');
 
             $(document).on('click', '.node', function() {
+                var module = $(this).prop('__data__').module;
                 $uibModal.open({
                     templateUrl: 'app/components/trajectory/trajectory-modal.html',
                     controller: 'TrajectoryModalController',
                     controllerAs: '$ctrl',
                     resolve: {
                         items: function() {
-                            
+                            return module;
                         }
                     }
                 })
@@ -168,8 +169,16 @@ var list = [
     angular.module('fe').controller('TrajectoryModalController', TrajectoryModalController);
 
     /** @ngInject */
-    function TrajectoryModalController($uibModalInstance, items) {
-
+    function TrajectoryModalController($uibModalInstance, $state, items) {
+        var $ctrl = this;
+        $ctrl.items = items;
+        $ctrl.close = function() {
+            $uibModalInstance.dismiss('cancel');
+        };
+        $ctrl.go = function() {
+            $uibModalInstance.dismiss('cancel');
+            $state.go('log-detail');
+        };
     }
 
 })();

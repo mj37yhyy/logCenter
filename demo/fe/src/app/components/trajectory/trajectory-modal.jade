@@ -1,10 +1,10 @@
 //
    Created by yangdongxu on 2016/11/15.
 
-.modal-header
-    h3.modal-title 123
 .modal-body
-    ul
-        li 123
+    button.btn.btn-default.btn-lg.btn-block(type='button',
+    ng-repeat='item in $ctrl.items',
+    ng-click='$ctrl.go()') {{item}}
 .modal-footer
-    button.btn.btn-primary(type='button') ok
+    button.btn.btn-primary.btn-lg.btn-block(type='button',
+    ng-click='$ctrl.close()') ok

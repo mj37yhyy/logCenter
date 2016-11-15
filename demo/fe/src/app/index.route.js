@@ -24,6 +24,12 @@
             templateUrl: 'app/components/trajectory/trajectory.html',
             controller: 'TrajectoryController',
             controllerAs: 'vm'
+        })
+        .state('log-detail', {
+            url: '/log-detail',
+            templateUrl: 'app/components/logDetail/logDetail.html',
+            controller: 'LogDetailController',
+            controllerAs: 'vm'
         });
 
     $urlRouterProvider.otherwise('/query');
