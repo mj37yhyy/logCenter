@@ -16,10 +16,11 @@ body { padding-top: 70px; }
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/angular/angular.min.js"></script>
-<title>日志分析平台</title>
+<title>日访问量统计</title>
 </head>
 
 <body>
+
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -36,8 +37,8 @@ body { padding-top: 70px; }
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">日志分析</a></li>
-        <li class="dropdown">
+        <li class=""><a href="index.html">日志分析</a></li>
+        <li class="dropdown active">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">报表 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="chart1.html">日访问量统计</a></li>
@@ -54,43 +55,7 @@ body { padding-top: 70px; }
   </div><!-- /.container-fluid -->
 </nav>
 <div class="container">
-	<div ng-app="queryApp" ng-controller="queryCtrl">    
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            <h3 class="panel-title">日志查询</h3>
-          </div>
-          <div class="panel-body">
-            <form class="form-horizontal" role="form">
-              <div class="form-group">
-                <label for="inputEmail3" class="control-label">用户名：</label>
-                <input type="text" class="form-control" id="userName" placeholder="用户名">
-              </div>
-              <div class="form-group">
-                <label for="inputEmail3" class="control-label">Action：</label>
-                <input type="text" class="form-control" id="action" placeholder="Action">
-              </div>
-              <div class="form-group">
-                <label for="inputPassword3" class="control-label">时间：从：</label>
-                <input type="datetime-local" class="form-control" id="timeFrom" placeholder="时间：从">
-              </div>
-              <div class="form-group">
-                <label for="inputPassword3" class="control-label">时间：到：</label>
-                <input type="datetime-local" class="form-control" id="timeTo" placeholder="时间：到">
-              </div>
-              <div class="form-group">
-                <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="doQuery()">查询</button>
-              </div>          
-            </form>
-          </div>
-          <div class="list-group">
-              <a href="#" class="list-group-item {{ log.error }}" ng-repeat="log in logs" ng-click="doOpen(log.traceId)">
-                <h4 class="list-group-item-heading">{{ log.traceId }}</h4>
-                <p class="list-group-item-text">{{ log.time }}&nbsp;{{ log.text }}</p>
-              </a>
-            </div>
-        </div>
-    </div>
+<img src="1.png"/>
 </div>
-<script src="index.js"></script>
 </body>
 </html>
