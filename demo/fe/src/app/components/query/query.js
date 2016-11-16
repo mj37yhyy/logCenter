@@ -17,6 +17,10 @@
         DemoApiService.getSth({
             a:1,
             b:2
+        }).then(function() {
+
+        }, function() {
+
         });
 
         $scope.doQuery = function () {
