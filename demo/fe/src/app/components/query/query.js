@@ -11,7 +11,14 @@
         .controller('QueryController', QueryController);
 
     /** @ngInject */
-    function QueryController($scope, $state) {
+    function QueryController($scope, $state, DemoApiService) {
+
+
+        DemoApiService.getSth({
+            a:1,
+            b:2
+        });
+
         $scope.doQuery = function () {
             $scope.logs = [
                 {
